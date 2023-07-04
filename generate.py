@@ -147,13 +147,16 @@ def main(
                     yield prompter.get_response(decoded_output)
             return  # early return for stream_output
 
-    with open("../data/html/html_test.json", "r") as f:
+    read_file = sys.argv[1]
+    output_file = sys.argv[2]
+
+    with open(read_file, "r") as f:
         data = json.load(f)
     for i in data:
-        with open("../data/html/html_test_output.txt", "a") as output_file:
-            result = evaluate("generate html code according to the following description: ", i["input"]).replace("\n", " ")
+        with open(output_file, "a") as output:
+            result = evaluate(i["instruction"], i["input"]).replace("\n", " ")
             text = re.sub(r'\s+', ' ', text)
-            output_file.write(result + "\n")
+            output.write(result + "\n")
 
 if __name__ == "__main__":
     fire.Fire(main)
