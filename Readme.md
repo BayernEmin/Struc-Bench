@@ -4,11 +4,11 @@ Welcome to Struc-Bench! We employ the same finetune.py and generate.py as used i
 ## How to use generate.py
 You can use the command:
 ```
-python table_scores.py ref_file_path pred_file_path test_type
+python generate.py read_json_path output_file_path
 ```
 For example:
 ```
-python table_scores.py "table_test.json" "table_test_output.txt" "ourtest"
+python generate.py "table_test.json" "table_test_output.txt"
 ```
 
 ## Our data
