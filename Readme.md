@@ -8,7 +8,7 @@ python table_scores.py ref_file_path pred_file_path test_type
 ```
 For example:
 ```
-python table_scores.py table_test.json table_test_output.txt ourtest
+python table_scores.py "table_test.json" "table_test_output.txt" "ourtest"
 ```
 
 ## Our data
